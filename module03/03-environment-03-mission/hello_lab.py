@@ -10,8 +10,8 @@ requests.packages.urllib3.disable_warnings()
 # We need to know our token and other information.
 # Make sure you either create your own room
 # or provide the name of the common event room
-SPARK_TOKN = 'insert-your-token-from-developer.ciscospark.com-here'
-SPARK_ROOM = 'existing-room-name-inserted-here'
+SPARK_TOKN = 'OWM5NzZjNDMtNzVjMy00ZDkxLTkyNjgtYTIxM2Q1NjAwY2JjZTU5NzdiOWQtOWRi'
+SPARK_ROOM = 'DevNet Express Spore - 12-14 Dec 16'
 
 # The below URLs, usernames and passwords
 # match the dCloud DNA lab

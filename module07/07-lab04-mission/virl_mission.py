@@ -4,7 +4,7 @@
 import requests
 
 # Define necessary global variables
-VIRL_URL = ""
+VIRL_URL = "http://198.18.134.1"
 
 USERNAME = "guest"
 PASSWORD = "guest"
@@ -17,11 +17,11 @@ def create_project_user(url, username, password):
     '''
     print("Creating the project...")
     # Project URL against which the API call will be placed
-    project_api = ""
+    project_api = "/rest/projects"
     project_url = url + ":19400" + project_api
 
     # Below variables will be used to create new project
-    project_name = ""
+    project_name = "ping"
     description = "Project created via Python"
     enabled = True
     new_password = project_name
@@ -54,14 +54,14 @@ def start_sim(url, username, password):
     print("\nStarting simulation...\n")
 
     # Simulation start URL against which the API call will be placed
-    simulation_start_api = ""
+    simulation_start_api = "/simengine/rest/launch"
     simulation_start_url = url + ":19399" + simulation_start_api
 
     # Open .virl file and assign it to the variable
     virl_file = open('mission.virl', 'rb')
 
     # Parameter which will be passed to the server with the API call
-    simulation_name = ''
+    simulation_name = 'ping-simulation'
     params = {'file': simulation_name}
 
     # Make an API call and assign the response information to the variable
@@ -81,7 +81,7 @@ def packet_capture(url, username, password, sim):
     Also, user is required to answer questions in order for function to do its job.
     '''
     # Node URL against which the API call will be placed
-    node_api = ""
+    node_api = "/simengine/rest/nodes"
     node_url = url + ":19399" + node_api + "/" + sim
 
     # Make an API call and assign the response information to the variable
@@ -117,7 +117,7 @@ def packet_capture(url, username, password, sim):
                 print(str(num)+ ":" + " " * 10 + nodes[num])
 
     # Interface URL against which the API call will be placed
-    iface_api = ""
+    iface_api = "/simengine/rest/interfaces"
     iface_url = url + ":19399" + iface_api + "/" + sim
 
     # Parameters which will be passed to the server with the API call
@@ -160,7 +160,7 @@ def packet_capture(url, username, password, sim):
                 print(str(num) + " " * 17 + ifaces[num])
 
     # Capture URL against which the API call will be placed
-    capture_api = ""
+    capture_api = "/simengine/rest/capture"
     capture_url = url + ":19399" + capture_api + "/" + sim
 
     # Parameters which will be passed to the server with the API call
@@ -186,7 +186,7 @@ def stop_simulation(url, username, password, sim):
     '''
 
     # Stop URL against which the API call will be placed
-    stop_api = ""
+    stop_api = "/simengine/rest/stop"
     stop_url = url + ":19399" + stop_api + "/" + sim
 
     # Make an API call and assign the response information to the variable
